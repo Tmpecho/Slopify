@@ -317,6 +317,7 @@
   </script>
   </head>
   <body>
+	<script src="static/js/oneko.js"></script>
     <a href="#maincontent" class="skipnav">Skip to Content (Press Enter)</a>
     <div
       id="security-overlay"
@@ -849,11 +850,6 @@ window.addEventListener('resize', handleResponsiveLayout);
         <img src="static/images/penguin.webp" />
         <img src="https://secret.kgncengiz.com/F.jpg" />
       </div>
-      <section>
-        <div align="center">
-          <button id="l8rgt" onclick="location.href='O3O.mp4'">click me</button>
-        </div>
-      </section>
       <img src="https://secret.kgncengiz.com/F.jpg" />
       <section class="importante">
         <section>
@@ -1129,6 +1125,13 @@ window.addEventListener('resize', handleResponsiveLayout);
           });
         </script>
       </section>
+	  <section>
+		<center>
+		<a href="static/images/monster_zero_ultra.jpg">
+          <img src="static/images/come_here_marisa_kirisame.gif" />
+        </a>
+		</center>
+	  </section>
       <div id="cookiebanner" style="background: black; position:fixed; bottom:0px; height:auto !important;">
       <p>This site may or may not use cookies. I actually don't know.</p>
       <button id="hmmm yummy cookies" onclick="cookieclick()">Uh ok i guess</button>
@@ -1216,9 +1219,7 @@ window.addEventListener('resize', handleResponsiveLayout);
       </div>
       <p>
         &copy; 2024 DishpitDev.
-        <a href="https://github.com/dishpitdev/slopify"
-          >Built by the community</a
-        >, for the community.
+        <a href="https://github.com/dishpitdev/slopify">Built by the community</a>, against the community.
       </p>
     </footer>
     <script src="static/js/error.js"></script>
@@ -1405,8 +1406,9 @@ window.addEventListener('resize', handleResponsiveLayout);
     </script>
     <script>
         function rainbowPulse() {
-            const hue = (Date.now() /10) % 360;
-            document.body.style.backgroundColor = `hsl(${hue}, 70%, 20%)`;
+            const hue0 = (Date.now() /10) % 360;
+            const hue2 = (hue0+ 250) % 360;
+            document.body.style.background = `linear-gradient(90deg, hsl(${hue0}, 70%, 20%), hsl(${hue2}, 70%, 30%))`;
             requestAnimationFrame(rainbowPulse);
         }
         rainbowPulse();
