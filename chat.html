@@ -294,6 +294,9 @@
                 let messageData = JSON.parse(message);
                 if (!messageData.username || !messageData.message) throw new Error('Invalid message data: ' + message);
                 localMessage(messageData.username, messageData.message);
+                if (messageData.flash) {
+                    flashGreen();
+                }
             } catch (e) {
                 console.error(e);
             }
@@ -338,6 +341,29 @@
                 }
             });
         });
+
+        function sendMessage() {
+            let userMessage = document.getElementById('messageInput').value;
+            if (!userMessage.trim()) return;
+
+            if (userMessage.includes("blink")) {
+                flashGreen();
+            }
+
+            let messageData = {
+                username: window.userName,
+                message: userMessage
+            };
+            window.chatConnection.send(JSON.stringify(messageData));
+            document.getElementById('messageInput').value = '';
+        }
+
+        function flashGreen() {
+            document.body.style.backgroundColor = 'green';
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+            }, 100);
+        }
     </script>
 </body>
 </html>
